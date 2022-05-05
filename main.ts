@@ -579,7 +579,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
-    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingDown, Predicate.MovingDown))
+    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingDown))
 })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
     characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.NotMoving, Predicate.NotMoving))
@@ -588,16 +588,16 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingLeft, Predicate.MovingLeft))
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingRight, Predicate.MovingRight))
+    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingRight))
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingLeft, Predicate.MovingLeft))
+    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingLeft))
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingRight, Predicate.MovingRight))
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingUp, Predicate.MovingUp))
+    characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingUp))
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.setCharacterState(mySprite, characterAnimations.rule(Predicate.FacingDown, Predicate.MovingDown))
@@ -621,6 +621,7 @@ mySprite = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
+controller.moveSprite(mySprite)
 characterAnimations.loopFrames(
 mySprite,
 [img`
